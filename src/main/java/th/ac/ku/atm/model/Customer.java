@@ -44,11 +44,11 @@ public class Customer {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return "Customer{" +
                 "id=" + id +
-                ", name" + name + '\'' +
-                ", pin=" + pin +
+                ", name='" + name + '\'' +
+                ", pin='" + pin + '\'' +
                 '}';
     }
 
