@@ -44,6 +44,14 @@ public class BankAccount {
         this.balance = balance;
     }
 
+    public void deposit(double deposit) {
+        this.balance = this.balance + deposit;
+    }
+
+    public void withdraw(double withdraw) {
+        this.balance = this.balance - withdraw;
+    }
+
     @Override
     public String toString(){
         return "BankAccount{" +

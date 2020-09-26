@@ -66,4 +66,21 @@ public class BankAccountService {
                 bankAccount.getId();
         restTemplate.delete(url, bankAccount);
     }
+
+    public void depositBankAccount(BankAccount bankAccount) {
+        String url = "http://localhost:8091/api/bankaccount/" +
+                bankAccount.getId();
+        BankAccount amount = getBankAccount(bankAccount.getId());
+        amount.deposit(bankAccount.getBalance());
+        restTemplate.put(url, amount);
+    }
+
+    public void withdrawBankAccount(BankAccount bankAccount) {
+        String url = "http://localhost:8091/api/bankaccount/" +
+                bankAccount.getId();
+        BankAccount amount = getBankAccount(bankAccount.getId());
+        amount.withdraw(bankAccount.getBalance());
+        restTemplate.put(url, amount);
+    }
+
 }
